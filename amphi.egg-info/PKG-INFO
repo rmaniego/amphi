@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: amphi
-Version: 1.0.0
+Version: 1.0.1
 Summary: MoviePy OOP wrapper
 Home-page: https://github.com/rmaniego/amphi
 Author: Rodney Maniego Jr.
@@ -23,6 +23,7 @@ MoviePy OOP wrapper
 
 ## Additional Requirements
  - ImageMagick binary file
+ - Matplotlib
  - OpenCV
 
 ## Usage

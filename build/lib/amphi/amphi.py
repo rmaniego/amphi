@@ -1,7 +1,8 @@
 """
-    Studio
+    Amphi
     MoviePy Wrapper
     (c) 2021
+    MIT License
 """
 
 import os
