@@ -1,9 +1,28 @@
+Metadata-Version: 2.1
+Name: amphi
+Version: 1.0.0
+Summary: MoviePy OOP wrapper
+Home-page: https://github.com/rmaniego/amphi
+Author: Rodney Maniego Jr.
+Author-email: rod.maniego23@gmail.com
+License: MIT
+Download-URL: https://github.com/rmaniego/amphi/archive/v1.0.tar.gz
+Keywords: MoviePy,Video,Editor
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # amphi
 MoviePy OOP wrapper
 
 ## Additional Requirements
  - ImageMagick binary file
- - Matplotlib
  - OpenCV
 
 ## Usage
@@ -34,5 +53,7 @@ if movie.save("my-movie.mp4", fps=30, bitrate="16000k"):
     print("The video has been successfully saved.")
 
 ```
+
+
 
 

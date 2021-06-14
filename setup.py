@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 setuptools.setup(
     name = 'amphi',
     packages = ["amphi"],
-    version = '1.0.0',
+    version = '1.0.1',
     license='MIT',
     description = 'MoviePy OOP wrapper',
     long_description=long_description,

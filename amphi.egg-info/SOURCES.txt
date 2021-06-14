@@ -1,0 +1,14 @@
+LICENSE
+README.md
+commit.sh
+pypi.sh
+setup.cfg
+setup.py
+amphi/__init__.py
+amphi/amphi.py
+amphi/version.py
+amphi.egg-info/PKG-INFO
+amphi.egg-info/SOURCES.txt
+amphi.egg-info/dependency_links.txt
+amphi.egg-info/requires.txt
+amphi.egg-info/top_level.txt
