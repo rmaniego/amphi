@@ -28,9 +28,7 @@ class Amphi:
         self.audios = {}
         self.videos = {}
         self.texts = {}
-        self.audio_clip = None
         self.video_clip = None
-        self.video_clip_name = None
         
         if not os.path.exists("studio/stabilized"):
             os.makedirs("studio/stabilized")
@@ -57,7 +55,6 @@ class Amphi:
         return self
     
     def video(self, name):
-        self.video_clip_name = name
         self.video_clip = self.videos.get(name, None)
         return self
     
@@ -132,7 +129,8 @@ class Amphi:
         if self.video_clip is not None:
             audio = self.audios.get(name, None)
             if audio is not None:
-                self.video_clip = self.video_clip.set_audio(audio)
+                duration = min((audio.duration, self.video_clip.duration))
+                self.video_clip = self.video_clip.set_audio(audio).set_duration(duration)
         return self
     
     def fadein(self, duration):

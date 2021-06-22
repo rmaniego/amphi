@@ -6,6 +6,7 @@
 """
 
 import os
+from random import randinit
 
 from vidstab import VidStab
 from sometime import Sometime
@@ -56,6 +57,32 @@ class Amphi:
     
     def video(self, name):
         self.video_clip = self.videos.get(name, None)
+    
+    def highlight(self):
+        # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
+        if self.video_clip is not None:
+            max_duration = round(self.video_clip.duration)
+            if max_duration > 5: 
+                previous = None
+                temp_highlights = {}
+                for index in range(max_duration):
+                    frame = asarray(self.video_clip.get_frame(index))
+                    if previous is not None:
+                        mse = np.sum((previous.astype("float") - frame.astype("float")) ** 2)
+                        mse /= float(previous.shape[0] * frame.shape[1])
+                        temp_highlightshighlights.update({index: mse})
+                    previous = frame
+                highlights = {}
+                avg = mean(list(temp_highlights.values()))
+                for index, mse in temp_highlights.items():
+                    if mse > avg:
+                        highlights.update({index: mse})
+                if len(highlights) > 0:
+                    indices = list(highlights.keys())
+                    index = indices[randint(0, (len(indices)-1))]
+                    if index <= (max_duration - 5):
+                        mse = highlights.get(index)
+                        self.video_clip = self.video_clip.subclip(index)
         return self
     
     def new_text(self, name, data, color="white", font="Arial", kerning=5, fontsize=12, position="center", duration=10):
