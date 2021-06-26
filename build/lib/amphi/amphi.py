@@ -102,7 +102,7 @@ class Amphi:
         if self.video_clip is not None:
             if end is None:
                 end = self.video_clip.duration
-            duration = end - start
+            duration = int((end - start))
             if duration > max:
                 max_duration = min((start+max), self.video_clip.duration)
                 end = start + max_duration
