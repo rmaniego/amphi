@@ -60,6 +60,7 @@ class Amphi:
     
     def video(self, name):
         self.video_clip = self.videos.get(name, None)
+        return self
     
     def highlight(self):
         # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
