@@ -6,7 +6,7 @@
 """
 
 import os
-from random import randnit
+from random import randint
 
 import numpy as np
 from numpy import asarray
