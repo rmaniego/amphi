@@ -6,8 +6,11 @@
 """
 
 import os
-from random import randinit
+from random import randnit
 
+import numpy as np
+from numpy import asarray
+from statistics import mean
 from vidstab import VidStab
 from sometime import Sometime
 from moviepy.editor import AudioFileClip, VideoFileClip, TextClip, CompositeVideoClip, concatenate_videoclips
