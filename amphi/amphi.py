@@ -173,7 +173,7 @@ class Amphi:
             try:
                 if isinstance(duration, int) or isinstance(duration, float):
                     if 0 < duration <= 5:
-                        self.video_clip.fadein(float(duration))
+                        self.video_clip - self.video_clip.fadein(float(duration))
             except:
                 pass
         return self
@@ -183,7 +183,7 @@ class Amphi:
             try:
                 if isinstance(duration, int) or isinstance(duration, float):
                     if 0 < duration <= 5:
-                        self.video_clip.fadeout(float(duration))
+                        self.video_clip = self.video_clip.fadeout(float(duration))
             except:
                 pass
         return self
@@ -193,7 +193,7 @@ class Amphi:
             try:
                 if isinstance(duration, int) or isinstance(duration, float):
                     if 0 < duration <= 5:
-                        self.video_clip.audio_fadein(flaot(duration))
+                        self.video_clip = self.video_clip.audio_fadein(flaot(duration))
             except:
                 pass
         return self
@@ -203,7 +203,7 @@ class Amphi:
             try:
                 if isinstance(duration, int) or isinstance(duration, float):
                     if 0 < duration <= 5:
-                        self.video_clip.audio_fadeout(flaot(duration))
+                        self.video_clip = self.video_clip.audio_fadeout(flaot(duration))
             except:
                 pass
         return self

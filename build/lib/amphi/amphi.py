@@ -171,8 +171,9 @@ class Amphi:
     def fadein(self, duration):
         if self.video_clip is not None:
             try:
-                if duration > 0:
-                    self.video_clip.fadein(float(duration))
+                if isinstance(duration, int) or isinstance(duration, float):
+                    if 0 < duration <= 5:
+                        self.video_clip.fadein(float(duration))
             except:
                 pass
         return self
@@ -180,8 +181,29 @@ class Amphi:
     def fadeout(self, duration):
         if self.video_clip is not None:
             try:
-                if duration > 0:
-                    self.video_clip.fadeout(float(duration))
+                if isinstance(duration, int) or isinstance(duration, float):
+                    if 0 < duration <= 5:
+                        self.video_clip.fadeout(float(duration))
+            except:
+                pass
+        return self
+    
+    def audio_fadein(self, duration):
+        if self.video_clip is not None:
+            try:
+                if isinstance(duration, int) or isinstance(duration, float):
+                    if 0 < duration <= 5:
+                        self.video_clip.audio_fadein(flaot(duration))
+            except:
+                pass
+        return self
+    
+    def audio_fadeout(self, duration):
+        if self.video_clip is not None:
+            try:
+                if isinstance(duration, int) or isinstance(duration, float):
+                    if 0 < duration <= 5:
+                        self.video_clip.audio_fadeout(flaot(duration))
             except:
                 pass
         return self
