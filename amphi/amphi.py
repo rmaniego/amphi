@@ -13,6 +13,7 @@ from numpy import asarray
 from statistics import mean
 from vidstab import VidStab
 from sometime import Sometime
+import moviepy.video.fx.all as vfx
 from moviepy.editor import AudioFileClip, VideoFileClip, TextClip, CompositeVideoClip, concatenate_videoclips
 
 def strip_filename(path):
@@ -205,6 +206,17 @@ class Amphi:
                     if 0 < duration <= 5:
                         self.video_clip = self.video_clip.audio_fadeout(float(duration))
             except:
+                pass
+        return self
+    
+    def set_contrast(self, luminosity=0, contrast=0):
+        if self.video_clip is not None:
+            try:
+                if isinstance(luminosity, int) and isinstance(contrast, int):
+                    if 0 < abs(duration) <= 100:
+                        self.video_clip = self.video_clip.fx(vfx.lum_contrast, lum=luminosity, contrast=contrast, contrast_thr=100)
+            except Exception as e:
+                print(e)
                 pass
         return self
     
