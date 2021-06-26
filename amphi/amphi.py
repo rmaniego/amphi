@@ -17,7 +17,7 @@ def strip_filename(path):
     return list(path.split("/"))[-1]
 
 class Amphi:
-    def __init__(self, width=1080):
+    def __init__(self, width=1080, max=5):
         self.width = 1080
         if isinstance(width, int):
             self.width = width
@@ -62,7 +62,7 @@ class Amphi:
         # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
         if self.video_clip is not None:
             max_duration = round(self.video_clip.duration)
-            if max_duration > 5: 
+            if max_duration > max: 
                 previous = None
                 temp_highlights = {}
                 for index in range(max_duration):
@@ -80,7 +80,7 @@ class Amphi:
                 if len(highlights) > 0:
                     indices = list(highlights.keys())
                     index = indices[randint(0, (len(indices)-1))]
-                    if index <= (max_duration - 5):
+                    if index <= (max_duration - max):
                         mse = highlights.get(index)
                         self.video_clip = self.video_clip.subclip(index)
         return self
@@ -99,8 +99,8 @@ class Amphi:
             if end is None:
                 end = self.video_clip.duration
             duration = end - start
-            if duration > 5:
-                max_duration = min((start+5), self.video_clip.duration)
+            if duration > max:
+                max_duration = min((start+max), self.video_clip.duration)
                 end = start + max_duration
             self.video_clip = self.video_clip.subclip(start, end)
         return self
