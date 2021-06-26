@@ -27,6 +27,10 @@ class Amphi:
 
         self.height = int((self.width * 9 / 16))
         self.dimension = self.width, self.height
+        
+        self.max = max
+        if not isinstance(max, int):
+            self.max = 5
 
         self.clips = []
         self.audios = {}
@@ -66,7 +70,7 @@ class Amphi:
         # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
         if self.video_clip is not None:
             max_duration = round(self.video_clip.duration)
-            if max_duration > max: 
+            if max_duration > self.max: 
                 previous = None
                 temp_highlights = {}
                 for index in range(max_duration):
@@ -84,7 +88,7 @@ class Amphi:
                 if len(highlights) > 0:
                     indices = list(highlights.keys())
                     index = indices[randint(0, (len(indices)-1))]
-                    if index <= (max_duration - max):
+                    if index <= (max_duration - self.max):
                         mse = highlights.get(index)
                         self.video_clip = self.video_clip.subclip(index)
         return self
@@ -103,8 +107,8 @@ class Amphi:
             if end is None:
                 end = self.video_clip.duration
             duration = int((end - start))
-            if duration > max:
-                max_duration = min((start+max), self.video_clip.duration)
+            if duration > self.max:
+                max_duration = min((start+self.max), self.video_clip.duration)
                 end = start + max_duration
             self.video_clip = self.video_clip.subclip(start, end)
         return self
