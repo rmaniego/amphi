@@ -12,3 +12,6 @@ amphi.egg-info/SOURCES.txt
 amphi.egg-info/dependency_links.txt
 amphi.egg-info/requires.txt
 amphi.egg-info/top_level.txt
+amphi/__pycache__/__init__.cpython-39.pyc
+amphi/__pycache__/amphi.cpython-39.pyc
+amphi/__pycache__/version.cpython-39.pyc
