@@ -239,3 +239,13 @@ class Amphi:
             video.write_videofile(filename, fps=fps, audio_bitrate=audio_bitrate, bitrate=bitrate, codec=codec)
             return True
         return False
+    
+    def close(self):
+        try:
+            for _, clip in self.videos.items():
+                clip.close()
+            for _, clip in self.audios.items():
+                clip.close()
+        except:
+            pass
+        
